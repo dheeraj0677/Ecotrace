@@ -1,0 +1,12 @@
+{
+  "name": "EcoTrace — Carbon Footprint Tracker",
+  "short_name": "EcoTrace",
+  "description": "Track, reduce, and offset your carbon footprint with personalized insights.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2D6A4F",
+  "background_color": "#f0faf4",
+  "icons": [
+    { "src": "/icons/leaf.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

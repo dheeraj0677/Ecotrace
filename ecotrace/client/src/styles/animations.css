@@ -1,0 +1,134 @@
+/* Custom keyframe animations for EcoTrace */
+
+/* Globe pulse animation */
+@keyframes globePulse {
+  0%, 100% { 
+    filter: drop-shadow(0 0 8px rgba(45, 158, 107, 0.3)); 
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(45, 158, 107, 0.6)); 
+  }
+}
+
+/* CO2 molecule orbit paths */
+@keyframes orbit1 {
+  0% { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(90px) rotate(-360deg); }
+}
+
+@keyframes orbit2 {
+  0% { transform: rotate(120deg) translateX(75px) rotate(-120deg); }
+  100% { transform: rotate(480deg) translateX(75px) rotate(-480deg); }
+}
+
+@keyframes orbit3 {
+  0% { transform: rotate(240deg) translateX(100px) rotate(-240deg); }
+  100% { transform: rotate(600deg) translateX(100px) rotate(-600deg); }
+}
+
+/* Particle float */
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0) translateX(0); 
+    opacity: 0.3; 
+  }
+  25% { 
+    transform: translateY(-30px) translateX(15px); 
+    opacity: 0.7; 
+  }
+  50% { 
+    transform: translateY(-60px) translateX(-10px); 
+    opacity: 0.4; 
+  }
+  75% { 
+    transform: translateY(-40px) translateX(20px); 
+    opacity: 0.6; 
+  }
+}
+
+/* Counter roll animation */
+@keyframes rollUp {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Tree grow animation */
+@keyframes treeGrow {
+  0% { transform: scaleY(0); transform-origin: bottom; }
+  60% { transform: scaleY(1.1); }
+  100% { transform: scaleY(1); }
+}
+
+/* Leaf sway */
+@keyframes leafSway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Score reveal */
+@keyframes scoreReveal {
+  0% { 
+    transform: scale(0) rotate(-180deg); 
+    opacity: 0; 
+  }
+  60% { 
+    transform: scale(1.2) rotate(10deg); 
+    opacity: 1; 
+  }
+  80% { 
+    transform: scale(0.9) rotate(-5deg); 
+  }
+  100% { 
+    transform: scale(1) rotate(0); 
+  }
+}
+
+/* Connecting line draw */
+@keyframes drawLine {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* Gradient shift for backgrounds */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Badge unlock glow */
+@keyframes badgeGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(45, 158, 107, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(45, 158, 107, 0.6), 0 0 40px rgba(45, 158, 107, 0.2); }
+}
+
+/* Shimmer for skeleton loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-globe-pulse { animation: globePulse 3s ease-in-out infinite; }
+.animate-orbit-1 { animation: orbit1 8s linear infinite; }
+.animate-orbit-2 { animation: orbit2 10s linear infinite; }
+.animate-orbit-3 { animation: orbit3 12s linear infinite; }
+.animate-particle { animation: particleFloat 8s ease-in-out infinite; }
+.animate-roll-up { animation: rollUp 0.6s ease-out forwards; }
+.animate-tree-grow { animation: treeGrow 0.8s ease-out forwards; }
+.animate-leaf-sway { animation: leafSway 3s ease-in-out infinite; }
+.animate-score-reveal { animation: scoreReveal 0.8s ease-out forwards; }
+.animate-draw-line { animation: drawLine 1s ease-out forwards; }
+.animate-gradient-shift { 
+  animation: gradientShift 8s ease infinite; 
+  background-size: 300% 300%;
+}
+.animate-badge-glow { animation: badgeGlow 2s ease-in-out infinite; }
+.animate-shimmer {
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+}
+.dark .animate-shimmer {
+  background: linear-gradient(90deg, #0f3624 25%, #1a6342 50%, #0f3624 75%);
+  background-size: 200% 100%;
+}
