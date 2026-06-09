@@ -1,0 +1,51 @@
+services:
+  # 1. Express Backend Web Service
+  - type: web
+    name: ecotrace-server
+    env: node
+    plan: free
+    rootDir: ecotrace/server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false # Will prompt user for their MongoDB Atlas connection string
+      - key: JWT_SECRET
+        generateValue: true # Auto-generates a secure random secret key
+      - key: JWT_REFRESH_SECRET
+        generateValue: true # Auto-generates a secure random refresh secret key
+      - key: CLIENT_URL
+        value: https://ecotrace.onrender.com # Change to client static site URL after creation
+      - key: EMAIL_HOST
+        value: smtp.gmail.com
+      - key: EMAIL_PORT
+        value: 587
+      - key: EMAIL_USER
+        sync: false # SMTP User
+      - key: EMAIL_PASS
+        sync: false # SMTP App Password
+
+  # 2. React Vite Frontend Static Site
+  - type: web
+    name: ecotrace-client
+    env: static
+    plan: free
+    rootDir: ecotrace/client
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    routes:
+      - type: rewrite
+        from: /*
+        to: /index.html # SPA Router fallback so client-side routing works on refresh
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: ecotrace-server
+          type: web
+          property: url
+      - key: VITE_APP_NAME
+        value: EcoTrace
