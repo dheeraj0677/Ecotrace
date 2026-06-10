@@ -89,6 +89,7 @@ export default function Login() {
             🌿 Try Demo Mode
           </Button>
 
+
           <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
             Don't have an account?{' '}
             <Link to="/register" className="text-forest-500 hover:text-forest-600 font-semibold">Sign up free</Link>
