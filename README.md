@@ -13,8 +13,6 @@ EcoTrace is a premium, visually stunning, production-ready carbon footprint trac
 - **🌱 Offset Marketplace:** Match and calculate offset costs for real-world environmental projects.
 - **📚 Education & Action Hubs:** Read and search eco-articles, pledge 30+ custom green actions, and mark them completed.
 - **🌗 Dark Mode & Premium UI:** Curated color palettes, glassmorphism design elements, responsive layouts, and page transitions via Framer Motion.
-- **📧 Advanced Email Systems:** Automated registration welcome emails, weekly summary digests, and streak reminders using Nodemailer.
-- **📲 Progressive Web App (PWA):** Installable web app with custom manifest and SVG brand assets.
 
 ---
 
